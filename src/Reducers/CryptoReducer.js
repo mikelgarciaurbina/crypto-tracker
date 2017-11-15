@@ -6,7 +6,7 @@ import {
 
 const initialState = {
   isFetching: false,
-  data: null,
+  data: [],
   hasError: false,
   errorMessage: null,
 };
@@ -14,7 +14,7 @@ const initialState = {
 export default function(state = initialState, action) {
   switch (action.type) {
     case FETCHING_COIN_DATA:
-      return Object.assign(state, {
+      return Object.assign({}, state, {
         isFetching: true,
         data: null,
         hasError: false,
@@ -22,7 +22,7 @@ export default function(state = initialState, action) {
       });
 
     case FETCHING_COIN_DATA_SUCCESS:
-      return Object.assign(state, {
+      return Object.assign({}, state, {
         isFetching: false,
         data: action.payload,
         hasError: false,
@@ -30,9 +30,9 @@ export default function(state = initialState, action) {
       });
 
     case FETCHING_COIN_DATA_FAIL:
-      return Object.assign(state, {
+      return Object.assign({}, state, {
         isFetching: false,
-        data: null,
+        data: action.payload,
         hasError: true,
         errorMessage: action.payload,
       });
