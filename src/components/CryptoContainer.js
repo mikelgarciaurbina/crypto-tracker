@@ -1,26 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { ScrollView, Text, View } from 'react-native';
+import { View, Text, ScrollView, StyleSheet } from 'react-native';
 import Spinner from 'react-native-loading-spinner-overlay';
 
+import FetchCoinData from './../Actions/FetchCoinData';
 import CoinCard from './CoinCard';
-import FetchCoinData from '../Actions/FetchCoinData';
-
-const styles = {
-  contentContainer: {
-    paddingBottom: 100,
-    paddingTop: 55,
-  }
-}
 
 class CryptoContainer extends Component {
-  componentDidMount() {
+  componentWillMount() {
     this.props.FetchCoinData();
   }
 
   renderCoinCards() {
     const { crypto } = this.props;
-    return crypto.data.map((coin, index) =>
+    return crypto.data.map((coin, index) => (
       <CoinCard
         key={index}
         coin_name={coin.name}
@@ -29,32 +22,39 @@ class CryptoContainer extends Component {
         percent_change_24h={coin.percent_change_24h}
         percent_change_7d={coin.percent_change_7d}
       />
-    )
+    ));
   }
 
   render() {
     const { crypto } = this.props;
+    const { contentContainer } = styles;
 
     if (crypto.isFetching) {
       return (
         <View>
           <Spinner
             visible={crypto.isFetching}
-            textContent={"Loading..."}
-            textStyle={{color: '#253145'}}
+            textContent={'Loading...'}
+            textStyle={{ color: '#253145' }}
             animation="fade"
           />
         </View>
-      )
+      );
     }
 
     return (
-      <ScrollView contentContainerStyle={styles.contentContainer}>
+      <ScrollView contentContainerStyle={contentContainer}>
         {this.renderCoinCards()}
       </ScrollView>
     );
   }
 }
+
+const styles = {
+  contentContainer: {
+    paddingBottom: 100,
+  },
+};
 
 function mapStateToProps(state) {
   return {
