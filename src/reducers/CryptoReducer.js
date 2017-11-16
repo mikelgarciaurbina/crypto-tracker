@@ -1,8 +1,10 @@
-import {
+import { ActionTypes } from '../constants';
+
+const {
   FETCHING_COIN_DATA,
   FETCHING_COIN_DATA_SUCCESS,
   FETCHING_COIN_DATA_FAIL,
-} from '../utils/ActionTypes';
+} = ActionTypes;
 
 const initialState = {
   isFetching: false,
