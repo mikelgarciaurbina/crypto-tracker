@@ -40,7 +40,7 @@ const CoinCard = ({
       </View>
       <View style={statisticsContainer}>
         <Text>
-          24h:
+          {'24h: '}
           <Text
             style={
               percent_change_24h < 0 ? percentChangeMinus : percentChangePlus
@@ -50,7 +50,7 @@ const CoinCard = ({
           </Text>
         </Text>
         <Text>
-          7d:
+          {'7d: '}
           <Text
             style={
               percent_change_7d < 0 ? percentChangeMinus : percentChangePlus

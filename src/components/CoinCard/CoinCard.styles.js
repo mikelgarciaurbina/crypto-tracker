@@ -1,10 +1,12 @@
 import { StyleSheet } from 'react-native';
 
+import { THEME } from '../../constants';
+
 export default StyleSheet.create({
   container: {
     display: 'flex',
     marginBottom: 20,
-    borderBottomColor: '#e5e5e5',
+    borderBottomColor: THEME.GREY,
     borderBottomWidth: 3,
     padding: 20,
   },
@@ -42,19 +44,19 @@ export default StyleSheet.create({
   },
   statisticsContainer: {
     display: 'flex',
-    borderTopColor: '#FAFAFA',
+    borderTopColor: THEME.LIGHT_GREY,
     borderTopWidth: 2,
     padding: 10,
     flexDirection: 'row',
     justifyContent: 'space-around',
   },
   percentChangePlus: {
-    color: '#00BFA5',
+    color: THEME.GREEN,
     fontWeight: 'bold',
     marginLeft: 5,
   },
   percentChangeMinus: {
-    color: '#DD2C00',
+    color: THEME.RED,
     fontWeight: 'bold',
     marginLeft: 5,
   },
