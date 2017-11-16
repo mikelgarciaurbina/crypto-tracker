@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 import { View, Text, ScrollView, StyleSheet } from 'react-native';
 import Spinner from 'react-native-loading-spinner-overlay';
 
-import FetchCoinData from './../Actions/FetchCoinData';
-import CoinCard from './CoinCard';
+import FetchCoinData from '../Actions/FetchCoinData';
+import { CoinCard } from '../components';
 
-class CryptoContainer extends Component {
+class Crypto extends Component {
   componentWillMount() {
     this.props.FetchCoinData();
   }
@@ -62,4 +62,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, { FetchCoinData })(CryptoContainer);
+export default connect(mapStateToProps, { FetchCoinData })(Crypto);
