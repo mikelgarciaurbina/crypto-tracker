@@ -1,5 +1,7 @@
 import { StyleSheet } from 'react-native';
 
+import { THEME } from '../../constants';
+
 export default StyleSheet.create({
   header: {
     fontSize: 20,
@@ -8,6 +10,11 @@ export default StyleSheet.create({
   headerContainer: {
     alignItems: 'center',
     display: 'flex',
-    marginTop: 55,
+    paddingBottom: 10,
+    paddingTop: 55,
+    shadowColor: THEME.BLACK,
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.6,
+    zIndex: 10,
   },
 });

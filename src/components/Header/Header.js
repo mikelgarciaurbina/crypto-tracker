@@ -6,7 +6,7 @@ import styles from './Header.styles';
 const Header = () => {
   return (
     <View style={styles.headerContainer}>
-      <Text style={styles.header}>Cryptocurrency App</Text>
+      <Text style={styles.header}>Cryptocurrency</Text>
     </View>
   );
 };
