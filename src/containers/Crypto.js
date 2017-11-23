@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { View, Text, ScrollView, StyleSheet } from 'react-native';
+import { View, ScrollView } from 'react-native';
 import Spinner from 'react-native-loading-spinner-overlay';
 
 import { FetchCoinData } from '../actions';
 import { CoinCard } from '../components';
+
+const styles = {
+  contentContainer: {
+    paddingBottom: 100,
+  },
+};
 
 class Crypto extends Component {
   componentWillMount() {
@@ -49,12 +55,6 @@ class Crypto extends Component {
     );
   }
 }
-
-const styles = {
-  contentContainer: {
-    paddingBottom: 100,
-  },
-};
 
 function mapStateToProps(state) {
   return {
