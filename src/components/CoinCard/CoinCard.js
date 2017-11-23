@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { View, Text, Image } from 'react-native';
 
 import { C } from '../../constants';
@@ -11,7 +12,7 @@ const {
   moneySymbol,
   upperRow,
   coinSymbol,
-  coinName,
+  coinNameText,
   coinPrice,
   statisticsContainer,
   seperator,
@@ -21,47 +22,55 @@ const {
 
 const CoinCard = ({
   symbol,
-  coin_name,
-  price_usd,
-  percent_change_24h,
-  percent_change_7d,
-}) => {
-  return (
-    <View style={container}>
-      <View style={upperRow}>
-        <Image style={image} source={images[symbol]} />
-        <Text style={coinSymbol}>{symbol}</Text>
-        <Text style={seperator}>|</Text>
-        <Text style={coinName}>{coin_name}</Text>
-        <Text style={coinPrice}>
-          {price_usd}
-          <Text style={moneySymbol}> $ </Text>
-        </Text>
-      </View>
-      <View style={statisticsContainer}>
-        <Text>
-          {'24h: '}
-          <Text
-            style={
-              percent_change_24h < 0 ? percentChangeMinus : percentChangePlus
-            }
-          >
-            {percent_change_24h} %
-          </Text>
-        </Text>
-        <Text>
-          {'7d: '}
-          <Text
-            style={
-              percent_change_7d < 0 ? percentChangeMinus : percentChangePlus
-            }
-          >
-            {percent_change_7d} %
-          </Text>
-        </Text>
-      </View>
+  coinName,
+  priceUsd,
+  percentChange24h,
+  percentChange7d,
+}) => (
+  <View style={container}>
+    <View style={upperRow}>
+      <Image style={image} source={images[symbol]} />
+      <Text style={coinSymbol}>{symbol}</Text>
+      <Text style={seperator}>|</Text>
+      <Text style={coinNameText}>{coinName}</Text>
+      <Text style={coinPrice}>
+        {priceUsd}
+        <Text style={moneySymbol}> $ </Text>
+      </Text>
     </View>
-  );
+    <View style={statisticsContainer}>
+      <Text>
+        {'24h: '}
+        <Text
+          style={percentChange24h < 0 ? percentChangeMinus : percentChangePlus}
+        >
+          {percentChange24h} %
+        </Text>
+      </Text>
+      <Text>
+        {'7d: '}
+        <Text
+          style={percentChange7d < 0 ? percentChangeMinus : percentChangePlus}
+        >
+          {percentChange7d} %
+        </Text>
+      </Text>
+    </View>
+  </View>
+);
+CoinCard.propTypes = {
+  symbol: PropTypes.string,
+  coinName: PropTypes.string,
+  priceUsd: PropTypes.string,
+  percentChange24h: PropTypes.string,
+  percentChange7d: PropTypes.string,
+};
+CoinCard.defaultProps = {
+  symbol: 'BTC',
+  coinName: 'Bitcoin',
+  priceUsd: '8000',
+  percentChange24h: '5',
+  percentChange7d: '1',
 };
 
 export default CoinCard;

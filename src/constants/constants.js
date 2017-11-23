@@ -1,6 +1,7 @@
 export default {
   apiBaseURL: 'https://api.coinmarketcap.com',
 
+  /* eslint-disable */
   images: {
     ANT: require('../assets/Icons/aragon.png'),
     ARDR: require('../assets/Icons/ardor.png'),

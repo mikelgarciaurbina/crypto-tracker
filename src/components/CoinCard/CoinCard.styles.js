@@ -21,7 +21,7 @@ export default StyleSheet.create({
     marginRight: 5,
     fontWeight: 'bold',
   },
-  coinName: {
+  coinNameText: {
     marginTop: 10,
     marginLeft: 5,
     marginRight: 20,
