@@ -19,6 +19,7 @@ export default {
     DOGE: require('../assets/Icons/dogecoin.png'),
     EMC: require('../assets/Icons/emercoin.png'),
     ETH: require('../assets/Icons/ethereum.png'),
+    ETC: require('../assets/Icons/ethereumclassic.png'),
     FCT: require('../assets/Icons/factom.png'),
     GAME: require('../assets/Icons/gamecredits.png'),
     GNO: require('../assets/Icons/gnosis.png'),
