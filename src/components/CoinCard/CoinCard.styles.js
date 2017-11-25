@@ -4,32 +4,32 @@ import { THEME } from '../../constants';
 
 export default StyleSheet.create({
   coinNameText: {
-    marginTop: 10,
     marginLeft: 5,
     marginRight: 20,
+    marginTop: 10,
   },
   coinPrice: {
-    marginTop: 10,
+    fontWeight: 'bold',
     marginLeft: 'auto',
     marginRight: 10,
-    fontWeight: 'bold',
+    marginTop: 10,
   },
   coinSymbol: {
-    marginTop: 10,
+    fontWeight: 'bold',
     marginLeft: 20,
     marginRight: 5,
-    fontWeight: 'bold',
+    marginTop: 10,
   },
   container: {
-    display: 'flex',
-    marginBottom: 20,
     borderBottomColor: THEME.GREY,
     borderBottomWidth: 3,
+    display: 'flex',
+    marginBottom: 20,
     padding: 20,
   },
   image: {
-    width: 35,
     height: 35,
+    width: 35,
   },
   moneySymbol: {
     fontWeight: 'bold',
@@ -48,12 +48,12 @@ export default StyleSheet.create({
     marginTop: 10,
   },
   statisticsContainer: {
-    display: 'flex',
     borderTopColor: THEME.LIGHT_GREY,
     borderTopWidth: 2,
-    padding: 10,
+    display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-around',
+    padding: 10,
   },
   upperRow: {
     display: 'flex',
