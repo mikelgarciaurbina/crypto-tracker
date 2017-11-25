@@ -15,11 +15,11 @@ export default function FetchCoinData() {
 
     return axios
       .get(`${apiBaseURL}/v1/ticker/?limit=10`)
-      .then((res) => {
-        dispatch({ type: FETCHING_COIN_DATA_SUCCESS, payload: res.data });
+      .then(({ data }) => {
+        dispatch({ type: FETCHING_COIN_DATA_SUCCESS, payload: data });
       })
-      .catch((err) => {
-        dispatch({ type: FETCHING_COIN_DATA_FAIL, payload: err.data });
+      .catch(({ data }) => {
+        dispatch({ type: FETCHING_COIN_DATA_FAIL, payload: data });
       });
   };
 }
