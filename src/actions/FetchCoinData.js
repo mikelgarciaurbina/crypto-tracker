@@ -9,7 +9,7 @@ const {
   FETCHING_COIN_DATA_FAIL,
 } = ActionTypes;
 
-export default function FetchCoinData() {
+export default function () {
   return (dispatch) => {
     dispatch({ type: FETCHING_COIN_DATA });
 
