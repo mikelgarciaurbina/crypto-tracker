@@ -8,7 +8,7 @@ import { FetchCoinData } from '../actions';
 import { CoinCard } from '../components';
 import styles from './Crypto.styles';
 
-const { contentContainer } = styles;
+const { contentContainer, spinner } = styles;
 
 class Crypto extends Component {
   componentWillMount() {
@@ -46,7 +46,7 @@ class Crypto extends Component {
           <Spinner
             visible={isFetching}
             textContent="Loading..."
-            textStyle={{ color: '#253145' }}
+            textStyle={spinner}
             animation="fade"
           />
         </View>
