@@ -16,9 +16,9 @@ class Crypto extends Component {
   }
 
   renderCoinCards() {
-    const { crypto } = this.props;
+    const { crypto: { data = [] } } = this.props;
 
-    return crypto.data.map(({
+    return data.map(({
       id,
       name,
       percent_change_24h: percentChange24h,
@@ -38,13 +38,13 @@ class Crypto extends Component {
   }
 
   render() {
-    const { crypto } = this.props;
+    const { crypto: { isFetching = true } } = this.props;
 
-    if (crypto.isFetching) {
+    if (isFetching) {
       return (
         <View>
           <Spinner
-            visible={crypto.isFetching}
+            visible={isFetching}
             textContent="Loading..."
             textStyle={{ color: '#253145' }}
             animation="fade"
