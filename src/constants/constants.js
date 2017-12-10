@@ -8,6 +8,7 @@ export default {
     REP: require('../assets/Icons/augur.png'),
     BCH: require('../assets/Icons/bitcoin-cash.png'),
     BTC: require('../assets/Icons/bitcoin.png'),
+    BTG: require('../assets/Icons/bitcoin-gold.png'),
     BCC: require('../assets/Icons/bitconnect.png'),
     BTS: require('../assets/Icons/bitshares.png'),
     BCN: require('../assets/Icons/bytecoin.png'),
